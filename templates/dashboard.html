@@ -45,7 +45,14 @@
             </div>
             
             <div class="files-section">
-                <h2>Your Files</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 style="margin: 0;">Your Files</h2>
+                    <form method="POST" action="{{ url_for('files.test_scheduler') }}" style="display: inline;">
+                        <button type="submit" class="btn btn-secondary" onclick="return confirm('Run scheduler test now? This will check for expired files and send notifications.');">
+                            🔄 Test Scheduler
+                        </button>
+                    </form>
+                </div>
                 
                 {% if files %}
                     <div class="files-table">

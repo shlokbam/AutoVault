@@ -7,8 +7,10 @@ from config import (
     SMTP_PORT,
     SMTP_USERNAME,
     SMTP_PASSWORD,
-    EMAIL_FROM
+    EMAIL_FROM,
+    USE_S3
 )
+from s3_storage import delete_file_from_s3
 from datetime import datetime, timedelta
 import smtplib
 from email.mime.text import MIMEText
@@ -84,8 +86,15 @@ def process_expired_files():
                 # Check if file has expired
                 if file.is_expired():
                     # Delete expired file
-                    if os.path.exists(file.filepath):
-                        os.remove(file.filepath)
+                    if USE_S3:
+                        # Delete from S3
+                        success, message = delete_file_from_s3(file.user_id, file.filename)
+                        if not success:
+                            print(f"[Scheduler] Failed to delete from S3: {message}")
+                    else:
+                        # Delete from local filesystem
+                        if os.path.exists(file.filepath):
+                            os.remove(file.filepath)
                     
                     db.session.delete(file)
                     deleted_count += 1
