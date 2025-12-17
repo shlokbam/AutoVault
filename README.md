@@ -405,7 +405,7 @@ View execution logs in AWS CloudWatch:
 - **S3 Storage**: Monitor bucket size
 - **RDS Connections**: Check connection pool health
 
-### Your Latest Lambda Execution
+### Latest Lambda Execution
 ```
 2025-12-17 07:37:16.702Z - Found 1 files to check
 2025-12-17 07:37:17.109Z - Processed: 0 deleted, 0 notified
@@ -493,7 +493,7 @@ Memory: 1386 ms
 
 ## 💰 Cost Estimation (AWS)
 
-Based on your current setup in `ap-south-1` (Mumbai):
+Based on my current setup in `ap-south-1` (Mumbai):
 
 | Service | Usage | Monthly Cost (USD) |
 |---------|-------|-------------------|
@@ -521,12 +521,6 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📝 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
 ## 👨‍💻 Author
 
 **Shlok Bam**
@@ -534,42 +528,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - AWS Account: 3959-3823-3260
 
 ---
-
-## 🙏 Acknowledgments
-
-- Flask framework for web application
-- AWS for cloud infrastructure
-- SQLAlchemy for database ORM
-- APScheduler for background jobs
-- Boto3 for AWS SDK
-
----
-
-## 📞 Support
-
-For issues and questions:
-1. Check the [documentation files](./docs/)
-2. Review [troubleshooting section](#-troubleshooting)
-3. Open an issue on GitHub
-4. Check CloudWatch logs for AWS-related issues
-
----
-
-## 🗺️ Roadmap
-
-- [ ] Multi-factor authentication (MFA)
-- [ ] File sharing with other users
-- [ ] Folder organization
-- [ ] Advanced search and filtering
-- [ ] File versioning
-- [ ] Mobile application
-- [ ] Real-time notifications (WebSocket)
-- [ ] File preview (images, PDFs)
-- [ ] Bulk file operations
-- [ ] API for external integrations
-
----
-
-**Last Updated**: December 17, 2025  
-**Version**: 1.0.0  
-**Status**: ✅ Production Ready
